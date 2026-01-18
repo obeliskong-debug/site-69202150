@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Șervețele Comprimate 100% din Bambus - Distribuitor oficial Dr. Isla în România. Produse ecologice premium: biodegradabile, fără plastic, fără chimicale.">
+    <meta name="theme-color" content="#f5f5f5">
+    <title>Șervețele din Bambus - Dr. Isla România</title>
+    <style>
+        :root {
+            --primary-green: #2d6a4f;
+            --light-green: #52b788;
+            --accent-green: #74c69d;
+            --beige: #f4e8dc;
+            --light-beige: #fef8f3;
+            --white: #ffffff;
+            --dark-gray: #2b2b2b;
+            --light-gray: #f5f5f5;
+            --text-primary: #2b2b2b;
+            --text-secondary: #5a5a5a;
+            --border-radius: 8px;
+            --transition: all 0.3s ease;
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+            --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.12);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            color: var(--text-primary);
+            background-color: var(--white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Header & Navigation */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background-color: var(--white);
+            border-bottom: 1px solid rgba(45, 106, 79, 0.1);
+            box-shadow: var(--shadow-sm);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-green);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo::before {
+            content: '🌿';
+            font-size: 1.8rem;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--light-green);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--primary-green);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, rgba(45, 106, 79, 0.85) 0%, rgba(82, 183, 136, 0.85) 100%);
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: url('https://pub-534b25720b5e48129caa646bdc4731dc.r2.dev/sites/69202150-8ec1-49ab-a303-bb42386b6d33/images/hero-bg.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            opacity: 0.4;
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            text-align: center;
+            color: var(--white);
+            padding: 2rem;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 8vw, 4rem);
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            letter-spacing: -1px;
+        }
+
+        .hero p {
+            font-size: clamp(1rem, 2vw, 1.25rem);
+            margin-bottom: 2.5rem;
+            opacity: 0.95;
+            line-height: 1.8;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.875rem 2.5rem;
+            background-color: var(--light-green);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-size: 0.9rem;
+            box-shadow: 0 4px 12px rgba(82, 183, 136, 0.3);
+        }
+
+        .btn:hover {
+            background-color: var(--primary-green);
+            box-shadow: 0 8px 20px rgba(45, 106, 79, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            border: 2px solid var(--white);
+            color: var(--white);
+            margin-left: 1rem;
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--white);
+            color: var(--primary-green);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Main Content */
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        section {
+            padding: 5rem 0;
+            scroll-margin-top: 100px;
+        }
+
+        section h2 {
+            font-size: clamp(2rem, 5vw, 2.8rem);
+            margin-bottom: 2rem;
+            color: var(--primary-green);
+            text-align: center;
+        }
+
+        /* About Section */
+        .about {
+            background-color: var(--light-beige);
+        }
+
+        .about-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-content h2 {
+            text-align: left;
+        }
+
+        .about-content p {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        .about-features {
+            list-style: none;
+            margin-top: 2rem;
+        }
+
+        .about-features li {
+            padding: 0.75rem 0;
+            padding-left: 2rem;
+            position: relative;
+            color: var(--text-secondary);
+            font-size: 1rem;
+        }
+
+        .about-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--light-green);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .about-image {
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+            border-radius: var(--border-radius);
+        }
+
+        /* Features Section */
+        .features {
+            background-color: var(--white);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .feature-card {
+            padding: 2rem;
+            background-color: var(--light-beige);
+            border-radius: var(--border-radius);
+            border-left: 4px solid var(--light-green);
+            transition: var(--transition);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .feature-card h3 {
+            color: var(--primary-green);
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+        }
+
+        .feature-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        /* How It Works Section */
+        .process {
+            background-color: var(--light-beige);
+        }
+
+        .steps-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .step {
+            text-align: center;
+            position: relative;
+            padding: 2rem;
+        }
+
+        .step::before {
+            content: attr(data-step);
+            display: block;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary-green), var(--light-green));
+            color: var(--white);
+            border-radius: 50%;
+            font-weight: bold;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            box-shadow: var(--shadow-md);
+        }
+
+        .step h3 {
+            color: var(--primary-green);
+            margin-bottom: 0.75rem;
+            font-size: 1.15rem;
+        }
+
+        .step p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* Benefits Section */
+        .benefits {
+            background-image: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(244, 232, 220, 0.95) 100%),
+                              url('https://pub-534b25720b5e48129caa646bdc4731dc.r2.dev/sites/69202150-8ec1-49ab-a303-bb42386b6d33/images/environment-bg.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            position: relative;
+        }
+
+        .benefits-content {
+            max-width: 600px;
+            margin: 0 auto 3rem;
+        }
+
+        .benefits-content p {
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            margin-bottom: 2rem;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 2rem;
+            background-color: var(--white);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-md);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--light-green);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        /* CTA Section */
+        .cta {
+            background-image: linear-gradient(135deg, rgba(45, 106, 79, 0.85) 0%, rgba(82, 183, 136, 0.85) 100%),
+                              url('https://pub-534b25720b5e48129caa646bdc4731dc.r2.dev/sites/69202150-8ec1-49ab-a303-bb42386b6d33/images/cta-bg.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: var(--white);
+            text-align: center;
+            padding: 6rem 2rem;
+            position: relative;
+        }
+
+        .cta::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-color: rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .cta > * {
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta h2 {
+            color: var(--white);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .cta p {
+            font-size: 1.1rem;
+            margin-bottom: 2.5rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0.95;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* Contact Section */
+        .contact {
+            background-color: var(--light-beige);
+        }
+
+        .contact-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-intro {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .contact-intro p {
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            color: var(--primary-green);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            padding: 0.875rem 1.25rem;
+            border: 2px solid rgba(45, 106, 79, 0.2);
+            border-radius: var(--border-radius);
+            font-family: inherit;
+            font-size: 1rem;
+            transition: var(--transition);
+            background-color: var(--white);
+            color: var(--text-primary);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--light-green);
+            box-shadow: 0 0 0 3px rgba(82, 183, 136, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-green);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem;
+            margin-top: 0;
+        }
+
+        footer p {
+            margin: 0;
+            opacity: 0.9;
+        }
+
+        /* Animations */
+        .fade-in {
+            animation: fadeIn 0.6s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .slide-up {
+            animation: slideUp 0.6s ease-out;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav {
+                padding: 1rem 1.5rem;
+            }
+
+            .nav-links {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                flex-direction: column;
+                gap: 0;
+                background-color: var(--white);
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease;
+                box-shadow: var(--shadow-md);
+            }
+
+            .nav-links.active {
+                max-height: 500px;
+            }
+
+            .nav-links li {
+                border-bottom: 1px solid rgba(45, 106, 79, 0.1);
+            }
+
+            .nav-links a {
+                display: block;
+                padding: 1rem 1.5rem;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .about-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .about-content h2 {
+                text-align: center;
+            }
+
+            section {
+                padding: 3rem 0;
+            }
+
+            .cta {
+                padding: 4rem 2rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .btn-secondary {
+                margin-left: 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero p {
+                font-size: 0.95rem;
+            }
+
+            section h2 {
+                font-size: 1.8rem;
+            }
+
+            .features-grid,
+            .steps-container,
+            .stats {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-buttons {
+                gap: 0.75rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <nav>
+            <a href="#" class="logo">Șervețele Bambus</a>
+            <button class="mobile-menu-btn" id="mobile-menu-btn">☰</button>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#about">Despre</a></li>
+                <li><a href="#features">Beneficii</a></li>
+                <li><a href="#process">Cum Funcționează</a></li>
+                <li><a href="#benefits">Impact</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <h1>Șervețele Comprimate 100% din Bambus</h1>
+            <p>Distribuitor oficial Dr. Isla în România. Produse ecologice premium: biodegradabile, fără plastic, fără chimicale. Alege sustenabilitatea pentru familia ta.</p>
+            <a href="#about" class="btn">Descoperă Produsele</a>
+        </div>
+    </section>
+
+    <main>
+        <!-- About Section -->
+        <section class="about" id="about">
+            <h2>Parteneri Dr. Isla - Inovație Ecologică din Germania</h2>
+            <div class="about-container">
+                <div class="about-content">
+                    <p>Suntem distribuitori oficiali în România pentru produsele revoluționare Dr. Isla. Șervețelele comprimate din bambus reprezintă viitorul sustenabilității - produse 100% naturale, fără compromisuri în ceea ce privește calitatea și respectul pentru mediu.</p>
+                    <ul class="about-features">
+                        <li>100% fibre de bambus naturale</li>
+                        <li>Biodegradabile în totalitate</li>
+                        <li>Zero plastic și chimicale</li>
+                        <li>Comprimate pentru economie de spațiu</li>
+                        <li>Calitate premium din Germania</li>
+                    </ul>
+                </div>
+                <div class="about-image">
+                    <img src="https://pub-534b25720b5e48129caa646bdc4731dc.r2.dev/sites/69202150-8ec1-49ab-a303-bb42386b6d33/images/about-product.png" alt="Șervețea comprimată din bambus care se extinde în apă" loading="lazy">
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features" id="features">
+            <h2>De Ce Să Alegi Șervețelele din Bambus?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3>100% Ecologice</h3>
+                    <p>Fabricate exclusiv din fibre de bambus, fără adăugarea de plastic sau substanțe chimice nocive. Complet biodegradabile și prietenoase cu mediul.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Economie de Spațiu</h3>
+                    <p>Formatul comprimat reduce cu 90% spațiul de depozitare. O pastilă mică devine o șervetea completă când intră în contact cu apa.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Calitate Premium</h3>
+                    <p>Produse în Germania conform standardelor europene de calitate. Rezistente, absorbante și moi la atingere.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Versatile</h3>
+                    <p>Ideale pentru acasă, călătorii, camping, restaurant sau birou. Perfecte pentru curățenie generală și îngrijire personală.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Process Section -->
+        <section class="process" id="process">
+            <h2>Cum Funcționează?</h2>
+            <div class="steps-container">
+                <div class="step" data-step="1">
+                    <h3>Adaugă Apă</h3>
+                    <p>Pune pastila comprimată într-un bol cu apă călduță sau rece</p>
+                </div>
+                <div class="step" data-step="2">
+                    <h3>Expansiune Rapidă</h3>
+                    <p>În câteva secunde, pastila se transformă într-o șervetea completă</p>
+                </div>
+                <div class="step" data-step="3">
+                    <h3>Gata de Folosit</h3>
+                    <p>Șervețeaua este moale, absorbantă și gata pentru orice utilizare</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Benefits Section -->
+        <section class="benefits" id="benefits">
+            <h2>Impactul Pozitiv pentru Planeta Noastră</h2>
+            <div class="benefits-content">
+                <p>Alegând șervețelele din bambus Dr. Isla, contribui activ la reducerea deșeurilor de plastic și protejarea mediului pentru generațiile viitoare.</p>
+            </div>
+            <div class="stats">
+                <div class="stat-item">
+                    <div class="stat-number">0%</div>
+                    <div class="stat-label">Plastic în compoziție</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Biodegradabile</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">90%</div>
+                    <div class="stat-label">Mai puțin spațiu de depozitare</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta">
+            <h2>Alătură-te Mișcării Eco-Responsabile</h2>
+            <p>Comandă astăzi șervețelele comprimate din bambus Dr. Isla și fă primul pas către un stil de viață mai sustenabil.</p>
+            <div class="cta-buttons">
+                <button class="btn" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Comandă Acum</button>
+                <a href="#about" class="btn btn-secondary">Află Mai Multe</a>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact" id="contact">
+            <h2>Contactează-ne</h2>
+            <div class="contact-container">
+                <div class="contact-intro">
+                    <p>Ai întrebări despre produsele Dr. Isla sau vrei să devii partener de distribuție? Suntem aici să te ajutăm!</p>
+                </div>
+                <form class="contact-form" onsubmit="handleSubmit(event)">
+                    <div class="form-group">
+                        <label for="name">Numele complet</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Adresa de email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Telefon</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Mesajul tău</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn">Trimite Mesajul</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Șervețele din Bambus - Dr. Isla România. Toate drepturile rezervate.</p>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const navLinks = document.getElementById('nav-links');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Close mobile menu when a link is clicked
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        // Observe feature cards and other elements
+        document.querySelectorAll('.feature-card, .step, .stat-item').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Handle form submission
+        function handleSubmit(event) {
+            event.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const message = document.getElementById('message').value;
+            
+            // Compose mailto link
+            const subject = encodeURIComponent('Cerere de informații - Șervețele din Bambus');
+            const body = encodeURIComponent(
+                `Nume: ${name}\nEmail: ${email}\nTelefon: ${phone}\n\nMesaj:\n${message}`
+            );
+            
+            // Create a temporary link and click it
+            const mailtoLink = `mailto:contact@serveteledebambus.ro?subject=${subject}&body=${body}`;
+            window.location.href = mailtoLink;
+            
+            // Reset form
+            event.target.reset();
+        }
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#' && document.querySelector(href)) {
+                    e.preventDefault();
+                    document.querySelector(href).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Add scroll animation to header
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.style.boxShadow = 'var(--shadow-md)';
+            } else {
+                header.style.boxShadow = 'var(--shadow-sm)';
+            }
+        });
+    </script>
+</body>
+</html>
